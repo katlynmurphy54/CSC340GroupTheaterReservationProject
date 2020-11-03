@@ -24,7 +24,11 @@ namespace TheaterReservation
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            textBox1.Text = Form2.firstName;
+            textBox2.Text = Form2.lastName;
+            textBox3.Text = Form2.address;
+            textBox4.Text = Form2.email;
+            textBox5.Text = Form2.cardNumber;
         }
     }
 }

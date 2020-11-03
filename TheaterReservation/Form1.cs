@@ -20,7 +20,6 @@ namespace TheaterReservation
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 register = new Form2();
-            register.ShowDialog();
         }
     }
 }

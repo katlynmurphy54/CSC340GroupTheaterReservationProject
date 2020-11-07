@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Most_recent_gui
+namespace TheaterReservation
 {
-    public partial class Form1 : Form
+    public partial class Form10 : Form
     {
-        public Form1()
+        public Form10()
         {
             InitializeComponent();
         }

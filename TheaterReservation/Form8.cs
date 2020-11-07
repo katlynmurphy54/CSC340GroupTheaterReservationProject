@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GroupProject
+namespace TheaterReservation
 {
-    public partial class Form1 : Form
+    public partial class Form8 : Form
     {
-        public Form1()
+        public Form8()
         {
             InitializeComponent();
         }
@@ -63,9 +63,8 @@ namespace GroupProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form2 moreInformation = new Form2();
+            Form9 moreInformation = new Form9();
             moreInformation.ShowDialog();
-
         }
     }
 }

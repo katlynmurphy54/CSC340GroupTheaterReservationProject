@@ -1,6 +1,6 @@
-﻿namespace Most_recent_gui
+﻿namespace TheaterReservation
 {
-    partial class Form1
+    partial class Form10
     {
         /// <summary>
         /// Required designer variable.

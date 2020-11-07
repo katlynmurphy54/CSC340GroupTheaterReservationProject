@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GroupProject
+namespace TheaterReservation
 {
-    public partial class Form2 : Form
+    public partial class Form9 : Form
     {
-        public Form2()
+        public Form9()
         {
             InitializeComponent();
         }

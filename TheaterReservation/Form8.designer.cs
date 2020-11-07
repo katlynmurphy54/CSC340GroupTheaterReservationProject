@@ -1,6 +1,6 @@
-﻿namespace GroupProject
+﻿namespace TheaterReservation
 {
-    partial class Form1
+    partial class Form8
     {
         /// <summary>
         /// Required designer variable.

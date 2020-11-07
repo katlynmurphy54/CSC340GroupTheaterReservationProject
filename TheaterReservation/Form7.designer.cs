@@ -1,6 +1,6 @@
-﻿namespace Res
+﻿namespace TheaterReservation
 {
-    partial class Form1
+    partial class Form7
     {
         /// <summary>
         /// Required designer variable.

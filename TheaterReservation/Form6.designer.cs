@@ -1,6 +1,6 @@
-﻿namespace menu
+﻿namespace TheaterReservation
 {
-    partial class Form3
+    partial class Form6
     {
         /// <summary>
         /// Required designer variable.
@@ -118,6 +118,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Confirm Order";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox6
             // 
@@ -215,13 +216,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "First Name:";
             // 
-            // Form3
+            // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 600);
             this.Controls.Add(this.panel1);
-            this.Name = "Form3";
+            this.Name = "Form6";
             this.Text = "Payment Details";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

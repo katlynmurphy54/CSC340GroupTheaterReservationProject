@@ -30,5 +30,10 @@ namespace TheaterReservation
             textBox4.Text = Form2.email;
             textBox5.Text = Form2.cardNumber;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

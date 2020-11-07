@@ -19,8 +19,8 @@ namespace TheaterReservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            Form11 changeInformation = new Form11();
+            changeInformation.ShowDialog();
         }
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace TheaterReservation
 {
-    partial class Form6
+    partial class Payment
     {
         /// <summary>
         /// Required designer variable.

@@ -10,26 +10,18 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form9 : Form
+    public partial class Login : Form
     {
-        public Form9()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            UpdateAccount changeInformation = new UpdateAccount();
+            changeInformation.ShowDialog();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

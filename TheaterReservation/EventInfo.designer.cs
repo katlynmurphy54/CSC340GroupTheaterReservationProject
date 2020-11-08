@@ -1,6 +1,6 @@
 ﻿namespace TheaterReservation
 {
-    partial class Form9
+    partial class EventInfo
     {
         /// <summary>
         /// Required designer variable.

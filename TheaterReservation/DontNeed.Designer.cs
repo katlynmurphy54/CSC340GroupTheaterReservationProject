@@ -1,6 +1,6 @@
 ﻿namespace TheaterReservation
 {
-    partial class Form1
+    partial class DontNeed
     {
         /// <summary>
         /// Required designer variable.

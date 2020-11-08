@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form1 : Form
+    public partial class Payment : Form
     {
-        public Form1()
+        public Payment()
         {
             InitializeComponent();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 register = new Form2();
-            register.ShowDialog();
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TheaterReservation
 {
-    partial class Form11
+    partial class UpdateAccount
     {
         /// <summary>
         /// Required designer variable.

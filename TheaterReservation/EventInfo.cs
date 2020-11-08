@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form11 : Form
+    public partial class EventInfo : Form
     {
-        public Form11()
+        public EventInfo()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

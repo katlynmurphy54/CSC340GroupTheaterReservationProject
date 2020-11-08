@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form10 : Form
+    public partial class UpdateAccount : Form
     {
-        public Form10()
+        public UpdateAccount()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Form11 changeInformation = new Form11();
-            changeInformation.ShowDialog();
-        }
 
+        }
     }
 }

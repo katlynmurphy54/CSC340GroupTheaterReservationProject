@@ -10,40 +10,40 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form4 : Form
+    public partial class MainMenu : Form
     {
-        public Form4()
+        public MainMenu()
         {
             InitializeComponent();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form5 makeReservation = new Form5();
+            ReserveSeats makeReservation = new ReserveSeats();
             makeReservation.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form8 allEvents = new Form8();
+            AllEvents allEvents = new AllEvents();
             allEvents.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form2 registerAccount = new Form2();
+            AccountRegister registerAccount = new AccountRegister();
             registerAccount.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form7 cancelReservation = new Form7();
+            CancelReservation cancelReservation = new CancelReservation();
             cancelReservation.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form11 manageAccount = new Form11();
+            UpdateAccount manageAccount = new UpdateAccount();
             manageAccount.ShowDialog();
         }
     }

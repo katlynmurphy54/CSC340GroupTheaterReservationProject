@@ -1,6 +1,6 @@
 ﻿namespace TheaterReservation
 {
-    partial class Form7
+    partial class CancelReservation
     {
         /// <summary>
         /// Required designer variable.

@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form7 : Form
+    public partial class ReserveSeats : Form
     {
-        public Form7()
+        public ReserveSeats()
         {
             InitializeComponent();
-            panel2.Visible = false;
-            cancel_message.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Payment makePayment = new Payment();
+            makePayment.ShowDialog();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel2.Visible = true;
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            cancel_message.Visible = true;
         }
     }
 }

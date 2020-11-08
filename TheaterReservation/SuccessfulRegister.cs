@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form3 : Form
+    public partial class SuccessfulRegister : Form
     {
-        public Form3()
+        public SuccessfulRegister()
         {
             InitializeComponent();
         }
@@ -24,11 +24,11 @@ namespace TheaterReservation
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Form2.firstName;
-            textBox2.Text = Form2.lastName;
-            textBox3.Text = Form2.address;
-            textBox4.Text = Form2.email;
-            textBox5.Text = Form2.cardNumber;
+            textBox1.Text = AccountRegister.firstName;
+            textBox2.Text = AccountRegister.lastName;
+            textBox3.Text = AccountRegister.address;
+            textBox4.Text = AccountRegister.email;
+            textBox5.Text = AccountRegister.cardNumber;
         }
 
         private void button1_Click(object sender, EventArgs e)

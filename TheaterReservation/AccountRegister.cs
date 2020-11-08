@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form2 : Form
+    public partial class AccountRegister : Form
     {
-        public Form2()
+        public AccountRegister()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace TheaterReservation
             email = textBox4.Text;
             cardNumber = textBox5.Text;
 
-            Form3 registerSuccess = new Form3();
+            SuccessfulRegister registerSuccess = new SuccessfulRegister();
             registerSuccess.ShowDialog();
         }
     }

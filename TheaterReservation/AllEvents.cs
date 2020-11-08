@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TheaterReservation
 {
-    public partial class Form8 : Form
+    public partial class AllEvents : Form
     {
-        public Form8()
+        public AllEvents()
         {
             InitializeComponent();
         }
@@ -63,7 +63,7 @@ namespace TheaterReservation
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form9 moreInformation = new Form9();
+            EventInfo moreInformation = new EventInfo();
             moreInformation.ShowDialog();
         }
     }

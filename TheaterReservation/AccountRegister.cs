@@ -26,7 +26,6 @@ namespace TheaterReservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-        //hello world!
             firstName = textBox1.Text;
             lastName = textBox2.Text;
             address = textBox3.Text;

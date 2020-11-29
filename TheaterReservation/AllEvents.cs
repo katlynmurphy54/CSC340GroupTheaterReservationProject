@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,7 +63,26 @@ namespace TheaterReservation
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            //hamilton
             EventInfo moreInformation = new EventInfo();
+            moreInformation.eventType = "Hamilton";
+            moreInformation.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //wizard of oz
+            EventInfo moreInformation = new EventInfo();
+            moreInformation.eventType = "Wizard of Oz";
+            moreInformation.ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //romeo and juliet
+            EventInfo moreInformation = new EventInfo();
+            moreInformation.eventType = "Romeo and Juliet";
             moreInformation.ShowDialog();
         }
     }

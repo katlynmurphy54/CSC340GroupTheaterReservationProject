@@ -29,6 +29,7 @@ namespace TheaterReservation
             textBox3.Text = AccountRegister.address;
             textBox4.Text = AccountRegister.email;
             textBox5.Text = AccountRegister.cardNumber;
+            textBox6.Text = AccountRegister.memberID.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

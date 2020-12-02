@@ -20,7 +20,7 @@ namespace TheaterReservation
             InitializeComponent();
         }
 
-        public static string eventName = "";
+        public string eventName = "";
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -34,11 +34,6 @@ namespace TheaterReservation
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public ArrayList getTakenSeats()
         {
             ArrayList seatList = new ArrayList();  //a list to save the events
@@ -46,6 +41,7 @@ namespace TheaterReservation
             DataTable myTable = new DataTable();
             string connStr = " server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
             MySqlConnection conn = new MySqlConnection(connStr);
+
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -62,6 +58,7 @@ namespace TheaterReservation
                 Console.WriteLine(ex.ToString());
             }
             conn.Close();
+
             //convert the retrieved data to events and save them to the list
 
             string temp = "";
@@ -85,23 +82,33 @@ namespace TheaterReservation
                 }
             }
             return seatList;  //return the event list
+
+            
         }
 
-        private void ReserveSeats_Load(object sender, EventArgs e)
+        private void ReserveSeats_Load_1(object sender, EventArgs e)
         {
-
-            ArrayList takenSeats = getTakenSeats();
-
-            for (int i = 1; i <= 105; i++){
+            for (int i = 1; i <= 105; i++)
+            {
                 if (takenSeats.Contains(i.ToString()))
                 {
-                    continue;
+                continue;
                 }
                 else
                 {
-                    comboBox1.Items.Add(i.ToString());
+                comboBox1.Items.Add(i.ToString());
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

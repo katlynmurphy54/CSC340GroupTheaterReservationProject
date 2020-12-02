@@ -12,6 +12,9 @@ namespace TheaterReservation
 {
     public partial class ReserveSeats : Form
     {
+    
+        public String eventName = "";
+        
         public ReserveSeats()
         {
             InitializeComponent();

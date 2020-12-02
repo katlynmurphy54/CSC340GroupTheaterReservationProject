@@ -79,17 +79,20 @@ namespace TheaterReservation
         {
             if (eventType == "Hamilton")
             {
-                ReserveSeats addseats = new ReserveSeats();
+                ReserveSeats addseats = new ReserveSeats
+                addseats.eventName = eventType;
                 addseats.ShowDialog();
             }
             else if (eventType == "Wizard of Oz")
             {
                 ReserveSeats addseats = new ReserveSeats();
+                addseats.eventName = eventType;
                 addseats.ShowDialog();
             }
             else if (eventType == "Romeo and Juliet")
             {
                 ReserveSeats addseats = new ReserveSeats();
+                addseats.eventName = eventType;
                 addseats.ShowDialog();
             }
         }

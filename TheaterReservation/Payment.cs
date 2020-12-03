@@ -27,7 +27,7 @@ namespace TheaterReservation
             nonMemSeat.Visible = false;
             memSeats.Visible = false;
             memPrice.Visible = false;
-            makePayment.setSeat(seats);
+            makePayment.setSeat(seats + " ");
             makePayment.setPrice(price);
             makePayment.setPlay(eventName);
         }

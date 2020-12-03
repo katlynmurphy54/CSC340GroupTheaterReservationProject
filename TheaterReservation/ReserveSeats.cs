@@ -21,17 +21,29 @@ namespace TheaterReservation
         }
 
         public string eventName = "";
+        public int amt = 0;
+        public String seat_loc = "";
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Payment makePayment = new Payment();
-            makePayment.ShowDialog();
 
+            Payment makePayment = new Payment(seat_loc,amt, eventName) ;
+            makePayment.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
 
+        {
+            amt++;
+            int selectedIndex = comboBox1.SelectedIndex;
+            Object selectedItem = comboBox1.SelectedItem;
+            
+            if(selectedItem == null)
+            {
+                return;
+            }
+            seatsLabel.Text += selectedItem.ToString() + " " ;
+            seat_loc += selectedItem.ToString() + " ";
         }
 
         public ArrayList getTakenSeats()
@@ -85,30 +97,18 @@ namespace TheaterReservation
 
             
         }
-
-        private void ReserveSeats_Load_1(object sender, EventArgs e)
+        private void ReserveSeats_Load(object sender, EventArgs e)
         {
-            for (int i = 1; i <= 105; i++)
+            for (int i = 1; i <= 104; i++)
             {
-                if (takenSeats.Contains(i.ToString()))
-                {
-                continue;
-                }
-                else
-                {
+                //if (takenSeats.Contains(i.ToString()))
+                //{
+                //continue;
+                //}
+                //else
+                //{
                 comboBox1.Items.Add(i.ToString());
-                }
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

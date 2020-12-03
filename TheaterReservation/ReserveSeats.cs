@@ -44,6 +44,8 @@ namespace TheaterReservation
             }
             seatsLabel.Text += selectedItem.ToString() + " " ;
             seat_loc += selectedItem.ToString() + " ";
+            
+            comboBox1.Items.RemoveAt(selectedIndex);
         }
 
         public ArrayList getTakenSeats()

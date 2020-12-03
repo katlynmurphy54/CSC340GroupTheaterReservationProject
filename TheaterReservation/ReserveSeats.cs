@@ -20,14 +20,13 @@ namespace TheaterReservation
             InitializeComponent();
         }
 
-        public string eventName = "";
+        public String eventName = "";
         public int amt = 0;
         public String seat_loc = "";
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            Payment makePayment = new Payment(seat_loc,amt, eventName) ;
+            Payment makePayment = new Payment(seat_loc, amt, eventName);
             makePayment.ShowDialog();
         }
 
@@ -37,23 +36,23 @@ namespace TheaterReservation
             amt++;
             int selectedIndex = comboBox1.SelectedIndex;
             Object selectedItem = comboBox1.SelectedItem;
-            
-            if(selectedItem == null)
+
+            if (selectedItem == null)
             {
                 return;
             }
-            seatsLabel.Text += selectedItem.ToString() + " " ;
+            seatsLabel.Text += selectedItem.ToString() + " ";
             seat_loc += selectedItem.ToString() + " ";
-            
+
             comboBox1.Items.RemoveAt(selectedIndex);
         }
 
-        public ArrayList getTakenSeats()
+        private void ReserveSeats_Load(object sender, EventArgs e)
         {
-            ArrayList seatList = new ArrayList();  //a list to save the events
-                                                    //prepare an SQL query to retrieve all the events on the same, specified date
-            DataTable myTable = new DataTable();
-            string connStr = " server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
+
+            ArrayList Seats = new ArrayList();
+
+            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
             MySqlConnection conn = new MySqlConnection(connStr);
 
             try
@@ -62,54 +61,62 @@ namespace TheaterReservation
                 conn.Open();
                 string sql = "SELECT seats FROM salyerstheaterreservation WHERE event = @event";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@event", "eventName");
-                MySqlDataAdapter myAdapter = new MySqlDataAdapter(cmd);
-                myAdapter.Fill(myTable);
-                Console.WriteLine("Table is ready.");
-            }
-            catch (Exception ex)
+                cmd.Parameters.AddWithValue("@event", eventName);
+                MySqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    Seats.Add(myReader.GetString(0));
+                }
+                myReader.Close();
+            } catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
             conn.Close();
 
-            //convert the retrieved data to events and save them to the list
+            ArrayList takenSeats = new ArrayList();
 
-            string temp = "";
-
-            foreach (DataRow row in myTable.Rows)
+            foreach (string s in Seats)
             {
-                temp = row.ToString();
-
                 string seat = "";
+                int count = 1;
 
-                foreach (char c in temp){
-                    if (c != ',' && c != ' ')
+                foreach (char c in s)
+                {
+                    if (c != ' ')
                     {
                         seat += c;
-                    }else if (c == ',')
+                    }
+                    else if (c == ' ' || count == s.Length)
                     {
-                        seatList.Add(seat);
+                        takenSeats.Add(seat);
 
                         seat = "";
                     }
+                    count++;
                 }
             }
-            return seatList;  //return the event list
 
-            
-        }
-        private void ReserveSeats_Load(object sender, EventArgs e)
-        {
+            label4.Text = takenSeats.Count.ToString();
+
+            string temp = "";
+            foreach (string s in takenSeats)
+            {
+                temp += (s + " ");
+            }
+
+            label2.Text = temp;
+
             for (int i = 1; i <= 104; i++)
             {
-                //if (takenSeats.Contains(i.ToString()))
-                //{
-                //continue;
-                //}
-                //else
-                //{
-                comboBox1.Items.Add(i.ToString());
+                if (takenSeats.Contains(i.ToString()))
+                {
+                    continue;
+                }
+                else
+                {
+                    comboBox1.Items.Add(i.ToString());
+                }
             }
         }
     }

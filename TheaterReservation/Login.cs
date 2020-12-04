@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,9 +26,7 @@ namespace TheaterReservation
             string validemail = "";
             string validmemberID = "";
 
-            string str = "SELECT * FROM salyerstheatermember WHERE email = '" + textBox1.Text + "' and memberID = '" + textBox2.Text + "'";
             string constr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            
             MySqlConnection con = new MySqlConnection(constr);
 
             try
@@ -36,6 +34,7 @@ namespace TheaterReservation
                 Console.WriteLine("Connecting to MySQL...");
                 con.Open();
 
+                string str = "SELECT * FROM salyerstheatermember WHERE email = @email AND memberID = @memberID";
                 MySqlCommand cmd = new MySqlCommand(str, con);
                 
                 cmd.Parameters.AddWithValue("@email", textBox1.Text);
@@ -61,8 +60,12 @@ namespace TheaterReservation
 
             if (textBox1.Text == validemail && textBox2.Text == validmemberID)
             {
+                UpdateAccount.memberID = Convert.ToInt32(validmemberID);
+
                 UpdateAccount changeInformation = new UpdateAccount();
                 changeInformation.ShowDialog();
+
+                this.Close();
             }
             else
             {
@@ -74,5 +77,11 @@ namespace TheaterReservation
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

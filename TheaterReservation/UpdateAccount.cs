@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,15 +19,15 @@ namespace TheaterReservation
             InitializeComponent();
         }
 
+        public static int memberID = 0;
         private void button2_Click(object sender, EventArgs e)
         {
-string firstName = textBox3.Text;
+            string firstName = textBox3.Text;
             string lastName = textBox4.Text;
             string name = firstName + " " + lastName;
             string address = textBox6.Text;
             string email = textBox5.Text;
             string cardNum = textBox7.Text;
-            int memberID = Convert.ToInt32(textBox1.Text);
             string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
 
             MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);

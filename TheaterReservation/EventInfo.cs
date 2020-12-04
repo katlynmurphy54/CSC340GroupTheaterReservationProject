@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +13,7 @@ namespace TheaterReservation
     public partial class EventInfo : Form
     {
 
-        public String eventType = "";
+        public static String eventType = "";
 
 
         public EventInfo()
@@ -79,20 +79,23 @@ namespace TheaterReservation
         {
             if (eventType == "Hamilton")
             {
-                ReserveSeats addseats = new ReserveSeats
+                ReserveSeats addseats = new ReserveSeats();
                 addseats.eventName = eventType;
+                addseats.eventDate = "December 4th";
                 addseats.ShowDialog();
             }
             else if (eventType == "Wizard of Oz")
             {
                 ReserveSeats addseats = new ReserveSeats();
                 addseats.eventName = eventType;
+                addseats.eventDate = "December 18th";
                 addseats.ShowDialog();
             }
             else if (eventType == "Romeo and Juliet")
             {
                 ReserveSeats addseats = new ReserveSeats();
                 addseats.eventName = eventType;
+                addseats.eventDate = "December 25th";
                 addseats.ShowDialog();
             }
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace TheaterReservation
 {
@@ -17,11 +18,61 @@ namespace TheaterReservation
             InitializeComponent();
         }
 
+        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            UpdateAccount changeInformation = new UpdateAccount();
-            changeInformation.ShowDialog();
+
+            string validemail = "";
+            string validmemberID = "";
+
+            string str = "SELECT * FROM salyerstheatermember WHERE email = '" + textBox1.Text + "' and memberID = '" + textBox2.Text + "'";
+            string constr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
+            
+            MySqlConnection con = new MySqlConnection(constr);
+
+            try
+            {
+                Console.WriteLine("Connecting to MySQL...");
+                con.Open();
+
+                MySqlCommand cmd = new MySqlCommand(str, con);
+                
+                cmd.Parameters.AddWithValue("@email", textBox1.Text);
+                cmd.Parameters.AddWithValue("@memberID", textBox2.Text);
+                
+                MySqlDataReader da = cmd.ExecuteReader();
+
+                if (da.Read())
+                {
+                    validemail = da["email"].ToString();
+                    validmemberID = da["memberID"].ToString();
+                }
+
+                da.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            con.Close();
+
+
+
+            if (textBox1.Text == validemail && textBox2.Text == validmemberID)
+            {
+                UpdateAccount changeInformation = new UpdateAccount();
+                changeInformation.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Login Unsuccessful! Please try again.");
+            }
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

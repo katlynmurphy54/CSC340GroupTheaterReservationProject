@@ -146,7 +146,8 @@ namespace TheaterReservation
             reset.TopMost = true;
             reset.Show();
             reset.eventName = EventInfo.eventType;
-            reset.eventDate = EventInfo.eventDate;
+            reset.eventDate = eventDate;
         }
     }
 }
+

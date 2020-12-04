@@ -43,6 +43,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -143,11 +144,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(162, 440);
+            this.label3.Location = new System.Drawing.Point(203, 440);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(265, 17);
+            this.label3.Size = new System.Drawing.Size(165, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Showing From 10/2/2020 Until 1/13/2021";
+            this.label3.Text = "Showing From 10/2/2020\r\n";
             // 
             // label2
             // 
@@ -189,14 +190,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Menu";
             // 
-            // Form4
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(1023, 545);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 89);
+            this.checkedListBox1.TabIndex = 5;
+            // 
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 771);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form4";
+            this.Name = "MainMenu";
             this.Text = "Lexington Theatre";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -224,6 +234,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

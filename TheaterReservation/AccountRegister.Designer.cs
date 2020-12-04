@@ -157,8 +157,9 @@
             this.label7.Size = new System.Drawing.Size(388, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "Account Registration Failed. Account Already Exists.";
+            this.label7.Visible = false;
             // 
-            // Form2
+            // AccountRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -176,7 +177,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "AccountRegister";
             this.Text = "Lexington Theatre";
             this.ResumeLayout(false);
             this.PerformLayout();

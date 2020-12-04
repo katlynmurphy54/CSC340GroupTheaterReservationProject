@@ -113,6 +113,7 @@ namespace TheaterReservation
             this.button2.TabIndex = 6;
             this.button2.Text = "Reset Seats";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label3
             // 
@@ -138,6 +139,7 @@ namespace TheaterReservation
             this.pictureBox1.Location = new System.Drawing.Point(235, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(431, 514);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

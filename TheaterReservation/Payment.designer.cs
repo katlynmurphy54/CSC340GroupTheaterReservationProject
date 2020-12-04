@@ -57,6 +57,8 @@ namespace TheaterReservation
             this.label11 = new System.Windows.Forms.Label();
             this.memIdTextbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.nonMemPanel.SuspendLayout();
             this.memPanel.SuspendLayout();
             this.SuspendLayout();
@@ -240,6 +242,8 @@ namespace TheaterReservation
             // 
             // memPanel
             // 
+            this.memPanel.Controls.Add(this.label8);
+            this.memPanel.Controls.Add(this.label7);
             this.memPanel.Controls.Add(this.memSeats);
             this.memPanel.Controls.Add(this.memPrice);
             this.memPanel.Controls.Add(this.memberConfirmNumber);
@@ -258,16 +262,16 @@ namespace TheaterReservation
             // memSeats
             // 
             this.memSeats.AutoSize = true;
-            this.memSeats.Location = new System.Drawing.Point(14, 202);
+            this.memSeats.Location = new System.Drawing.Point(14, 232);
             this.memSeats.Name = "memSeats";
-            this.memSeats.Size = new System.Drawing.Size(44, 17);
+            this.memSeats.Size = new System.Drawing.Size(48, 17);
             this.memSeats.TabIndex = 21;
-            this.memSeats.Text = "Seats";
+            this.memSeats.Text = "Seats:";
             // 
             // memPrice
             // 
             this.memPrice.AutoSize = true;
-            this.memPrice.Location = new System.Drawing.Point(14, 173);
+            this.memPrice.Location = new System.Drawing.Point(14, 203);
             this.memPrice.Name = "memPrice";
             this.memPrice.Size = new System.Drawing.Size(44, 17);
             this.memPrice.TabIndex = 20;
@@ -276,11 +280,11 @@ namespace TheaterReservation
             // memberConfirmNumber
             // 
             this.memberConfirmNumber.AutoSize = true;
-            this.memberConfirmNumber.Location = new System.Drawing.Point(14, 147);
+            this.memberConfirmNumber.Location = new System.Drawing.Point(14, 153);
             this.memberConfirmNumber.Name = "memberConfirmNumber";
-            this.memberConfirmNumber.Size = new System.Drawing.Size(120, 17);
+            this.memberConfirmNumber.Size = new System.Drawing.Size(124, 17);
             this.memberConfirmNumber.TabIndex = 19;
-            this.memberConfirmNumber.Text = "Confimration Num";
+            this.memberConfirmNumber.Text = "Confirmation Num:";
             // 
             // memberConfirm
             // 
@@ -333,6 +337,26 @@ namespace TheaterReservation
             this.label10.TabIndex = 12;
             this.label10.Text = "Member ID:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(263, 17);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "You qualified for a member discount of $";
+            this.label7.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(280, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 17);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "label8";
+            this.label8.Visible = false;
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,5 +405,7 @@ namespace TheaterReservation
         private System.Windows.Forms.Label nonMemPrice;
         private System.Windows.Forms.Label memSeats;
         private System.Windows.Forms.Label memPrice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

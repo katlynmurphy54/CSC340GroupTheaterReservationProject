@@ -65,7 +65,7 @@ namespace TheaterReservation
         {
             //hamilton
             EventInfo moreInformation = new EventInfo();
-            moreInformation.eventType = "Hamilton";
+            EventInfo.eventType = "Hamilton";
             moreInformation.ShowDialog();
         }
 
@@ -73,7 +73,7 @@ namespace TheaterReservation
         {
             //wizard of oz
             EventInfo moreInformation = new EventInfo();
-            moreInformation.eventType = "Wizard of Oz";
+            EventInfo.eventType = "Wizard of Oz";
             moreInformation.ShowDialog();
 
         }
@@ -82,7 +82,7 @@ namespace TheaterReservation
         {
             //romeo and juliet
             EventInfo moreInformation = new EventInfo();
-            moreInformation.eventType = "Romeo and Juliet";
+            EventInfo.eventType = "Romeo and Juliet";
             moreInformation.ShowDialog();
         }
     }

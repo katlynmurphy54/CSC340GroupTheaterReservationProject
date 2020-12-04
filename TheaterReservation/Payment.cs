@@ -15,7 +15,7 @@ namespace TheaterReservation
     {
         reservation makePayment = new reservation();
 
-        public Payment(String seats, int price, String eventName)
+        public Payment(String seats, int price, String eventName, String eventDate)
         {
             InitializeComponent();
             //making labels not seen and setting price/seats
@@ -30,6 +30,7 @@ namespace TheaterReservation
             makePayment.setSeat(seats + " ");
             makePayment.setPrice(price);
             makePayment.setPlay(eventName);
+            makePayment.setDate(eventDate);
         }
         //member payment
         private void button2_Click(object sender, EventArgs e)
@@ -57,8 +58,11 @@ namespace TheaterReservation
                     usedSavePayBtn.Visible = false;
                     memSeats.Visible = true;
                     memPrice.Visible = true;
-                    memPrice.Text = "Total: $" + (makePayment.gettPrice() * 35 - (makePayment.gettPrice() * 35 * .10));
+                    label7.Visible = true;
+                    label8.Visible = true;
+                    memPrice.Text = "Total: $" + (makePayment.gettPrice() - (makePayment.gettPrice() * .10));
                     memSeats.Text = ("Your Seats Are: " + makePayment.getSeat());
+                    label8.Text = (makePayment.gettPrice() * .10).ToString();
                 }
                 else
                 {
@@ -107,7 +111,7 @@ namespace TheaterReservation
             nonMemOrderNum.Visible = true;
             nonMemPrice.Visible = true;
             nonMemSeat.Visible = true;
-            nonMemPrice.Text = "Total: $" + (makePayment.gettPrice() * 35);
+            nonMemPrice.Text = "Total: $" + (makePayment.gettPrice());
             nonMemSeat.Text = ("Your Seats Are: " + makePayment.getSeat());
             makePayment.confirmOrder(makePayment.getPlay());
             nonMemOrderNum.Text = ("Your Confirmation Number Is: " + makePayment.getConfirmNum());

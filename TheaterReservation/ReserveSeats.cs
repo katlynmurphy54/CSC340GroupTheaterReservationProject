@@ -31,9 +31,7 @@ namespace TheaterReservation
         }
 
         private void button1_Click(object sender, EventArgs e)
-
         {
-            amt++;
             int selectedIndex = comboBox1.SelectedIndex;
             Object selectedItem = comboBox1.SelectedItem;
 
@@ -41,11 +39,33 @@ namespace TheaterReservation
             {
                 return;
             }
+            //checkes if VIP seating or not
+            if(Int32.Parse(selectedItem.ToString()) > 32)
+            {
+                amt += 35;
+            }
+            else
+            {
+                amt += 50;
+            }
+            label3.Text = ("Total : $" + amt);
+
             seatsLabel.Text += selectedItem.ToString() + " ";
             seat_loc += selectedItem.ToString() + " ";
 
             comboBox1.Items.RemoveAt(selectedIndex);
         }
+        //reset seats
+        private void button2_Click(object sender, EventArgs e)
+        {
+            amt = 0;
+            seat_loc = "";
+            seatsLabel.Text = "Seats Selected: ";
+            label3.Text = "Total : $" + amt;
+
+        }
+
+
 
         private void ReserveSeats_Load(object sender, EventArgs e)
         {
@@ -97,7 +117,7 @@ namespace TheaterReservation
                 }
             }
 
-            label4.Text = takenSeats.Count.ToString();
+            //label4.Text = takenSeats.Count.ToString();
 
             string temp = "";
             foreach (string s in takenSeats)
@@ -105,7 +125,7 @@ namespace TheaterReservation
                 temp += (s + " ");
             }
 
-            label2.Text = temp;
+            //label2.Text = temp;
 
             for (int i = 1; i <= 104; i++)
             {
@@ -119,5 +139,7 @@ namespace TheaterReservation
                 }
             }
         }
+
+        
     }
 }

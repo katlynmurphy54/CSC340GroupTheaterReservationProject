@@ -43,8 +43,8 @@ namespace TheaterReservation
 
         private void button5_Click(object sender, EventArgs e)
         {
-            UpdateAccount manageAccount = new UpdateAccount();
-            manageAccount.ShowDialog();
+            Login loginInfo = new Login();
+            loginInfo.ShowDialog();
         }
     }
 }

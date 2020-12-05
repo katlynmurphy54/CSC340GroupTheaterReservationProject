@@ -14,15 +14,12 @@ namespace TheaterReservation
     public partial class CancelReservation : Form
     {
         reservation cancelRes = new reservation();
-        //String x = DateTime.Now.ToString("yyyy/MM/dd");
         public CancelReservation()
         {
 
             InitializeComponent();
             resFoundPanel.Visible = false;
             cancel_message.Visible = false;
-
-
         }
 
         //button1Click is for starting search
@@ -31,6 +28,7 @@ namespace TheaterReservation
             //clearing text field on another search
             errorMessage.Text = "";
             cancel_message.Visible = false;
+            resFoundPanel.Visible = false;
             //testing for ints
             int i;
             if (!int.TryParse(confirmationNumTextbox.Text, out i))
@@ -44,6 +42,15 @@ namespace TheaterReservation
                 //makes call and returns boolean if res exists
                 if (cancelRes.checkRes(cancelRes.getConfirmNum()))
                 {
+                    //checking to make sure they give at least 2 days notice
+                    TimeSpan ts = DateTime.Parse(cancelRes.getDate()).Subtract(DateTime.Now);
+                    int daysBefore = ts.Days + 1;
+                    if (daysBefore < 2)
+                    {
+                        errorMessage.Text = "Cannot cancel, you must \n give at least 2 days notice \n before canceling reservation";
+                        return;
+
+                    }
                     resFoundPanel.Visible = true;
                     dateTextBox.Text = cancelRes.getDate();
                     eventTextbox.Text = cancelRes.getEvent();
@@ -177,5 +184,7 @@ namespace TheaterReservation
             }
 
         }
+
+        
     }
 }

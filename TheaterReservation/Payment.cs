@@ -255,7 +255,7 @@ namespace TheaterReservation
                         " VALUES (@event, @date, @seats)";
                     MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@event", play);
-                    cmd.Parameters.AddWithValie("@date", getDate());
+                    cmd.Parameters.AddWithValue("@date", getDate());
                     cmd.Parameters.AddWithValue("@seats", getSeat());
                     cmd.ExecuteNonQuery();
 

@@ -65,20 +65,21 @@ namespace TheaterReservation
             this.cancelResPanel.Controls.Add(this.label1);
             this.cancelResPanel.Location = new System.Drawing.Point(23, 173);
             this.cancelResPanel.Name = "cancelResPanel";
-            this.cancelResPanel.Size = new System.Drawing.Size(401, 164);
+            this.cancelResPanel.Size = new System.Drawing.Size(401, 178);
             this.cancelResPanel.TabIndex = 1;
+            
             // 
             // errorMessage
             // 
             this.errorMessage.AutoSize = true;
-            this.errorMessage.Location = new System.Drawing.Point(172, 95);
+            this.errorMessage.Location = new System.Drawing.Point(150, 95);
             this.errorMessage.Name = "errorMessage";
             this.errorMessage.Size = new System.Drawing.Size(0, 17);
             this.errorMessage.TabIndex = 3;
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(154, 115);
+            this.searchBtn.Location = new System.Drawing.Point(175, 152);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(75, 23);
             this.searchBtn.TabIndex = 2;

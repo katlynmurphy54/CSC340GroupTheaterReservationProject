@@ -203,10 +203,11 @@ namespace TheaterReservation
 
                 {
                     conn.Open();
-                    string sql = "INSERT INTO salyerstheaterreservation (event, memberID, seats)" +
-                        " VALUES (@event, @memberID,@seats)";
+                    string sql = "INSERT INTO salyerstheaterreservation (event, date, memberID, seats)" +
+                        " VALUES (@event, @date, @memberID, @seats)";
                     MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@event", play);
+                    cmd.Parameters.AddWithValue("@date", getDate());
                     cmd.Parameters.AddWithValue("@memberID", getMemberID());
                     cmd.Parameters.AddWithValue("@seats", getSeat());
                     cmd.ExecuteNonQuery();
@@ -250,10 +251,11 @@ namespace TheaterReservation
 
                 {
                     conn.Open();
-                    string sql = "INSERT INTO salyerstheaterreservation (event, seats)" +
-                        " VALUES (@event,@seats)";
+                    string sql = "INSERT INTO salyerstheaterreservation (event, date, seats)" +
+                        " VALUES (@event, @date, @seats)";
                     MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@event", play);
+                    cmd.Parameters.AddWithValie("@date", getDate());
                     cmd.Parameters.AddWithValue("@seats", getSeat());
                     cmd.ExecuteNonQuery();
 

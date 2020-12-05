@@ -24,6 +24,8 @@ namespace TheaterReservation
         public static string address = "";
         public static string email = "";
         public static string cardNumber = "";
+        public static string expDate = "";
+        public static string securityNum = "";
         public static int memberID = 0;
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +36,8 @@ namespace TheaterReservation
             address = textBox3.Text;
             email = textBox4.Text;
             cardNumber = textBox5.Text;
+            expDate = textBox6.Text;
+            securityNum = textBox7.Text;
 
             string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
             MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
@@ -42,11 +46,11 @@ namespace TheaterReservation
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
 
-                string sql1 = "SELECT * FROM salyerstheatermember WHERE email = @email";
-                MySql.Data.MySqlClient.MySqlCommand cmd1 = new MySql.Data.MySqlClient.MySqlCommand(sql1, conn);
+                string sql = "SELECT * FROM salyerstheatermember WHERE email = @email";
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
 
-                cmd1.Parameters.AddWithValue("@email", email);
-                int exists = Convert.ToInt32(cmd1.ExecuteScalar());
+                cmd.Parameters.AddWithValue("@email", email);
+                int exists = Convert.ToInt32(cmd.ExecuteScalar());
 
                 if (exists != 0)
                 {
@@ -60,17 +64,17 @@ namespace TheaterReservation
                 }
                 else
                 {
-                    string sql2 = "INSERT INTO salyerstheatermember (name, address, email) VALUES (@name, @address, @email)";
+                    string sql1 = "INSERT INTO salyerstheatermember (name, address, email) VALUES (@name, @address, @email)";
+                    MySql.Data.MySqlClient.MySqlCommand cmd1 = new MySql.Data.MySqlClient.MySqlCommand(sql1, conn);
+                    cmd1.Parameters.AddWithValue("@name", name);
+                    cmd1.Parameters.AddWithValue("@address", address);
+                    cmd1.Parameters.AddWithValue("@email", email);
+                    cmd1.ExecuteNonQuery();
+
+                    string sql2 = "SELECT * FROM salyerstheatermember ORDER BY memberID DESC LIMIT 1";
                     MySql.Data.MySqlClient.MySqlCommand cmd2 = new MySql.Data.MySqlClient.MySqlCommand(sql2, conn);
-                    cmd2.Parameters.AddWithValue("@name", name);
-                    cmd2.Parameters.AddWithValue("@address", address);
-                    cmd2.Parameters.AddWithValue("@email", email);
-                    cmd2.ExecuteNonQuery();
 
-                    string sql3 = "SELECT * FROM salyerstheatermember ORDER BY memberID DESC LIMIT 1";
-                    MySql.Data.MySqlClient.MySqlCommand cmd3 = new MySql.Data.MySqlClient.MySqlCommand(sql3, conn);
-
-                    MySqlDataReader myReader = cmd3.ExecuteReader();
+                    MySqlDataReader myReader = cmd2.ExecuteReader();
 
                     if (myReader.Read())
                     {
@@ -82,10 +86,47 @@ namespace TheaterReservation
                     }
                     myReader.Close();
 
-                    SuccessfulRegister registerSuccess = new SuccessfulRegister();
-                    registerSuccess.ShowDialog();
+                    string sql3 = "SELECT * FROM salyerstheatercard WHERE cardNum = @cardNum";
+                    MySql.Data.MySqlClient.MySqlCommand cmd3 = new MySql.Data.MySqlClient.MySqlCommand(sql3, conn);
 
-                    this.Close();
+                    cmd3.Parameters.AddWithValue("@cardNum", cardNumber);
+                    Int64 cardExists = Convert.ToInt64(cmd3.ExecuteScalar());
+
+                    if (cardExists != 0)
+                    {
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                        textBox5.Text = "";
+                        textBox6.Text = "";
+                        textBox7.Text = "";
+
+                        label11.Visible = true;
+                    }
+                    else
+                    {
+                        string sql4 = "INSERT INTO salyerstheatercard (firstName, lastName, cardNum, expDate, securityCode, memberID) VALUES (@fname, @lname, @cardNum, @expDate, @secCode, @id)";
+                        MySql.Data.MySqlClient.MySqlCommand cmd4 = new MySql.Data.MySqlClient.MySqlCommand(sql4, conn);
+                        cmd4.Parameters.AddWithValue("@fname", firstName);
+                        cmd4.Parameters.AddWithValue("@lname", lastName);
+                        cmd4.Parameters.AddWithValue("@cardNum", cardNumber);
+                        cmd4.Parameters.AddWithValue("@expDate", expDate);
+                        cmd4.Parameters.AddWithValue("@secCode", securityNum);
+                        cmd4.Parameters.AddWithValue("@id", memberID);
+                        cmd4.ExecuteNonQuery();
+
+                        string sql5 = "UPDATE salyerstheatermember SET cardNum = @cardNum WHERE memberID = @id";
+                        MySql.Data.MySqlClient.MySqlCommand cmd5 = new MySql.Data.MySqlClient.MySqlCommand(sql5, conn);
+                        cmd5.Parameters.AddWithValue("@cardNum", cardNumber);
+                        cmd5.Parameters.AddWithValue("@id", memberID);
+                        cmd5.ExecuteNonQuery();
+
+                        SuccessfulRegister registerSuccess = new SuccessfulRegister();
+                        registerSuccess.ShowDialog();
+
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ex)
@@ -95,6 +136,10 @@ namespace TheaterReservation
             conn.Close();
             Console.WriteLine("Done.");
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-

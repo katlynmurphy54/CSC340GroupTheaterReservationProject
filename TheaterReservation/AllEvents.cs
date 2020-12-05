@@ -85,5 +85,13 @@ namespace TheaterReservation
             EventInfo.eventType = "Romeo and Juliet";
             moreInformation.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //peter pan
+            EventInfo moreInformation = new EventInfo();
+            EventInfo.eventType = "Peter Pan";
+            moreInformation.ShowDialog();
+        }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -146,9 +145,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(203, 440);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 17);
+            this.label3.Size = new System.Drawing.Size(157, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Showing From 10/2/2020\r\n";
+            this.label3.Text = "Showing on 12/10/2020\r\n";
             // 
             // label2
             // 
@@ -172,7 +171,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::TheaterReservation.Properties.Resources.peter4;
             this.pictureBox1.Location = new System.Drawing.Point(36, 45);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(512, 392);

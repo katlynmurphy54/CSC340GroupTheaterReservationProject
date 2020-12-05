@@ -22,10 +22,10 @@ namespace TheaterReservation
             ReserveSeats makeReservation = new ReserveSeats();
             //from main menu reservation set to peter pan
             makeReservation.eventName = "Peter Pan";
-            makeReservation.eventDate = "2020-10-02";
+            makeReservation.eventDate = "2020-12-10";
             //if they reset the seats from main menu reservation set back to peter pan
             EventInfo.eventType = "Peter Pan";
-            EventInfo.eventDate = "2020-10-02";
+            EventInfo.eventDate = "2020-12-10";
             makeReservation.ShowDialog();
         }
 

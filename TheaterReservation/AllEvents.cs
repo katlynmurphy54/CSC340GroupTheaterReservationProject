@@ -67,6 +67,7 @@ namespace TheaterReservation
             EventInfo moreInformation = new EventInfo();
             EventInfo.eventType = "Hamilton";
             moreInformation.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -75,6 +76,7 @@ namespace TheaterReservation
             EventInfo moreInformation = new EventInfo();
             EventInfo.eventType = "Wizard of Oz";
             moreInformation.ShowDialog();
+            this.Close();
 
         }
 
@@ -84,6 +86,7 @@ namespace TheaterReservation
             EventInfo moreInformation = new EventInfo();
             EventInfo.eventType = "Romeo and Juliet";
             moreInformation.ShowDialog();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -92,6 +95,7 @@ namespace TheaterReservation
             EventInfo moreInformation = new EventInfo();
             EventInfo.eventType = "Peter Pan";
             moreInformation.ShowDialog();
+            this.Close();
         }
     }
 }

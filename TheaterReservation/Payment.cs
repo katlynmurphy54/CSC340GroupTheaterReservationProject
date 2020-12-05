@@ -87,12 +87,6 @@ namespace TheaterReservation
                 label14.Text = "Please enter a 16 digit number for card";
                 return;
             }
-            //checking exp date
-            if (!int.TryParse(expDateBox.Text, out i))
-            {
-                label14.Text = "Please enter a number ";
-                return;
-            }
             //checking security code
             if (!int.TryParse(secCodeTextbox.Text, out i))
             {
@@ -351,6 +345,10 @@ namespace TheaterReservation
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

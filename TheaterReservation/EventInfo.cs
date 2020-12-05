@@ -28,13 +28,13 @@ namespace TheaterReservation
             {
                 label1.Text = eventType;
                 pictureBox4.Image = TheaterReservation.Properties.Resources._091019_Hamilton_JoanMarcus_02;
-                label10.Text = "December 4th, 2020";
+                label10.Text = "December 15th, 2020";
                 label8.Text = "Featuring Daveed Diggs and Jonathan Groff, this musical is coming" +
-                    "\nto Lexington for 1 night only on December 4th!" +
+                    "\nto Lexington for 1 night only on December 15th!" +
                     "\nGeneral Pricing: $50.00 per ticket " +
                     "\nVIP Pricing: $35.00 per ticket " +
                     "\nMax: 4 tickets per person";
-                eventDate = "2020-12-04";
+                eventDate = "2020-12-15";
             }
             else if (eventType == "Wizard of Oz")
             {
@@ -63,14 +63,14 @@ namespace TheaterReservation
             else if (eventType == "Peter Pan")
             {
                 label1.Text = eventType;
-                pictureBox4.Image = TheaterReservation.Properties.Resources.peterpan__1_;
-                label10.Text = "October 2nd, 2020";
+                pictureBox4.Image = TheaterReservation.Properties.Resources.peter4;
+                label10.Text = "December 10th, 2020";
                 label8.Text = "Featuring Cathy Rigby and Ryan Francis, this musical is coming" +
-                    "\nto Lexington for 1 night only on October 2nd!" +
+                    "\nto Lexington for 1 night only on December 10th!" +
                     "\nGeneral Pricing: $50.00 per ticket " +
                     "\nVIP Pricing: $35.00 per ticket " +
                     "\nMax: 4 tickets per person";
-                eventDate = "2020-10-02";
+                eventDate = "2020-12-10";
             }
         }
 
@@ -97,6 +97,7 @@ namespace TheaterReservation
                 addseats.eventName = eventType;
                 addseats.eventDate = eventDate;
                 addseats.ShowDialog();
+                this.Close();
             }
             else if (eventType == "Wizard of Oz")
             {
@@ -104,6 +105,7 @@ namespace TheaterReservation
                 addseats.eventName = eventType;
                 addseats.eventDate = eventDate;
                 addseats.ShowDialog();
+                this.Close();
             }
             else if (eventType == "Romeo and Juliet")
             {
@@ -111,6 +113,7 @@ namespace TheaterReservation
                 addseats.eventName = eventType;
                 addseats.eventDate = eventDate;
                 addseats.ShowDialog();
+                this.Close();
             }
             else if (eventType == "Peter Pan")
             {
@@ -118,6 +121,7 @@ namespace TheaterReservation
                 addseats.eventName = eventType;
                 addseats.eventDate = eventDate;
                 addseats.ShowDialog();
+                this.Close();
             }
         }
     }

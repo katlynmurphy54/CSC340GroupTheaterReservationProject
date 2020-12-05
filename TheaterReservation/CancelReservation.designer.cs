@@ -42,6 +42,7 @@ namespace TheaterReservation
             this.eventTextbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.cancelResPanel.SuspendLayout();
             this.resFoundPanel.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +68,6 @@ namespace TheaterReservation
             this.cancelResPanel.Name = "cancelResPanel";
             this.cancelResPanel.Size = new System.Drawing.Size(401, 178);
             this.cancelResPanel.TabIndex = 1;
-            
             // 
             // errorMessage
             // 
@@ -178,11 +178,22 @@ namespace TheaterReservation
             this.label4.TabIndex = 0;
             this.label4.Text = "Reservation Found";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(308, 467);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 45);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Back to Menu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // CancelReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 524);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.resFoundPanel);
             this.Controls.Add(this.cancelResPanel);
             this.Name = "CancelReservation";
@@ -211,6 +222,7 @@ namespace TheaterReservation
         private System.Windows.Forms.TextBox eventTextbox;
         private System.Windows.Forms.Label cancel_message;
         private System.Windows.Forms.Label errorMessage;
+        private System.Windows.Forms.Button button1;
     }
 }
 

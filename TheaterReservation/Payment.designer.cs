@@ -48,6 +48,8 @@ namespace TheaterReservation
             this.label2 = new System.Windows.Forms.Label();
             this.usedSavePayBtn = new System.Windows.Forms.Button();
             this.memPanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.memSeats = new System.Windows.Forms.Label();
             this.memPrice = new System.Windows.Forms.Label();
             this.memberConfirmNumber = new System.Windows.Forms.Label();
@@ -57,8 +59,8 @@ namespace TheaterReservation
             this.label11 = new System.Windows.Forms.Label();
             this.memIdTextbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.nonMemPanel.SuspendLayout();
             this.memPanel.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +76,7 @@ namespace TheaterReservation
             // 
             // nonMemPanel
             // 
+            this.nonMemPanel.Controls.Add(this.label9);
             this.nonMemPanel.Controls.Add(this.nonMemSeat);
             this.nonMemPanel.Controls.Add(this.nonMemPrice);
             this.nonMemPanel.Controls.Add(this.label14);
@@ -259,6 +262,26 @@ namespace TheaterReservation
             this.memPanel.Size = new System.Drawing.Size(329, 344);
             this.memPanel.TabIndex = 2;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(280, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 17);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "label8";
+            this.label8.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(263, 17);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "You qualified for a member discount of $";
+            this.label7.Visible = false;
+            // 
             // memSeats
             // 
             this.memSeats.AutoSize = true;
@@ -337,31 +360,31 @@ namespace TheaterReservation
             this.label10.TabIndex = 12;
             this.label10.Text = "Member ID:";
             // 
-            // label7
+            // button1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(263, 17);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "You qualified for a member discount of $";
-            this.label7.Visible = false;
+            this.button1.Location = new System.Drawing.Point(428, 589);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 51);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Back to Menu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label8
+            // label9
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(280, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "label8";
-            this.label8.Visible = false;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(114, 237);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 17);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Write as YYYY-MM-DD";
             // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 652);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.memPanel);
             this.Controls.Add(this.nonMemPanel);
             this.Name = "Payment";
@@ -407,5 +430,7 @@ namespace TheaterReservation
         private System.Windows.Forms.Label memPrice;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -34,6 +34,8 @@ namespace TheaterReservation
 
             Payment makePayment = new Payment(seat_loc, amt, eventName, eventDate);
             makePayment.ShowDialog();
+
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -142,11 +144,12 @@ namespace TheaterReservation
 
             ReserveSeats reset = new ReserveSeats();
 
+            reset.eventName = EventInfo.eventType;
+            reset.eventDate = EventInfo.eventDate;
+
             this.Close();
             reset.TopMost = true;
             reset.Show();
-            reset.eventName = EventInfo.eventType;
-            reset.eventDate = EventInfo.eventDate;
         }
     }
 }

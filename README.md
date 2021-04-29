@@ -1,4 +1,4 @@
-# CSC 340 - Ethics & Software Engineering - Fall 2020
+## CSC 340 - Ethics & Software Engineering - Fall 2020
 # Theater Reservation - Group Project
 
 Problem Statement:

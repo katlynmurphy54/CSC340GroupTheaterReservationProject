@@ -1,5 +1,5 @@
 # CSC 340 - Ethics & Software Engineering - Fall 2020
-# Theater Reservation - Group Project
+## Theater Reservation - Group Project
 
 Problem Statement:
 The Lexington Theatre is experiencing a large amount of reservations over the phone recently and now needs an online system to help with the amount of reservations they are receiving.
